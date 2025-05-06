@@ -41,11 +41,12 @@ const ProductDetails: React.FC = () => {
     fetchData();
   }, [id]);
 
-  const formatPrice = (price?: number, currency: string = 'USD') => {
+  const formatPrice = (price?: number, currency: string = 'INR') => {
     if (price === undefined) return 'N/A';
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency,
+      maximumFractionDigits: 0
     }).format(price);
   };
 
