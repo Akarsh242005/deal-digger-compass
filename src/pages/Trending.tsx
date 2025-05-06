@@ -17,8 +17,9 @@ const Trending: React.FC = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        // Here we use our search function with some popular queries to simulate trending products
+        // Here we use our search function with "popular" to get trending products
         const results = await searchProducts("popular");
+        console.log("Trending products:", results);
         setProducts(results);
       } catch (err) {
         console.error('Error fetching trending products:', err);
@@ -40,9 +41,16 @@ const Trending: React.FC = () => {
   };
 
   const filterByCategory = (category: string) => {
-    // In a real app, this would filter products by category
-    // For now, we'll just return all products
-    return products;
+    // Filter products by category
+    if (category === 'all') {
+      return products;
+    }
+    
+    // Filter products based on category name in description or name
+    return products.filter(product => 
+      product.description.toLowerCase().includes(category.toLowerCase()) ||
+      product.name.toLowerCase().includes(category.toLowerCase())
+    );
   };
 
   return (

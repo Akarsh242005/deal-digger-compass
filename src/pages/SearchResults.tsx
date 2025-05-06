@@ -11,6 +11,7 @@ import { ExternalLink } from 'lucide-react';
 const SearchResults: React.FC = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search).get('q') || '';
+  const category = new URLSearchParams(location.search).get('category') || '';
   
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [products, setProducts] = useState<Product[]>([]);
@@ -21,8 +22,17 @@ const SearchResults: React.FC = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const results = await searchProducts(query);
-        setProducts(results);
+        // Use either the search query or category parameter
+        const searchTerm = query || category;
+        console.log("Searching with term:", searchTerm);
+        
+        if (searchTerm) {
+          const results = await searchProducts(searchTerm);
+          console.log("Search results:", results);
+          setProducts(results);
+        } else {
+          setProducts([]);
+        }
       } catch (err) {
         console.error('Error searching products:', err);
         setError('Failed to fetch search results');
@@ -31,13 +41,8 @@ const SearchResults: React.FC = () => {
       }
     };
 
-    if (query) {
-      fetchData();
-    } else {
-      setProducts([]);
-      setIsLoading(false);
-    }
-  }, [query]);
+    fetchData();
+  }, [query, category]);
 
   const formatPrice = (price?: number, currency: string = 'INR') => {
     if (!price) return 'N/A';
@@ -54,7 +59,11 @@ const SearchResults: React.FC = () => {
       <main className="flex-1 container py-8">
         <div className="space-y-4">
           <h1 className="text-2xl md:text-3xl font-bold">
-            {query ? `Search results for "${query}"` : "Browse products"}
+            {query 
+              ? `Search results for "${query}"` 
+              : category 
+                ? `Browse ${category} products` 
+                : "Browse products"}
           </h1>
           
           {isLoading ? (
