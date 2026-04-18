@@ -1,0 +1,118 @@
+# 🚀 Deal Digger Compass
+
+A modern web application designed to help users discover, analyze, and track the best deals efficiently. Built with a scalable frontend architecture and optimized for performance, usability, and real-time interaction.
+
+---
+
+## 📌 Overview
+
+Deal Digger Compass is a smart deal discovery platform that aggregates and presents valuable offers in a structured and user-friendly interface. The project focuses on delivering a seamless experience with fast rendering, responsive design, and modular components.
+
+This project demonstrates strong fundamentals in frontend engineering, component-based architecture, and modern web tooling.
+
+---
+
+## ✨ Features
+
+- 🔍 Deal Discovery Interface – Browse and explore curated deals  
+- ⚡ Fast Performance – Powered by Vite  
+- 🎨 Modern UI/UX – Built with Tailwind CSS and shadcn/ui  
+- 📱 Responsive Design – Works across all devices  
+- 🧩 Component-Based Architecture – Clean and reusable code  
+- 🔄 Extendable – Ready for API and real-time data integration  
+
+---
+
+## 🛠️ Tech Stack
+
+- Frontend: React (TypeScript)  
+- Build Tool: Vite  
+- Styling: Tailwind CSS  
+- UI Components: shadcn/ui  
+- Linting: ESLint  
+
+---
+
+## 📂 Project Structure
+
+deal-digger-compass/
+│── public/              
+│── src/
+│   ├── components/      
+│   ├── pages/           
+│   ├── hooks/           
+│   ├── utils/           
+│   ├── App.tsx          
+│   └── main.tsx         
+│── package.json
+│── tailwind.config.ts
+│── vite.config.ts
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository  
+   git clone <your-repo-url>
+
+2. Navigate to project folder  
+   cd deal-digger-compass
+
+3. Install dependencies  
+   npm install
+
+4. Run the development server  
+   npm run dev
+
+App will run on:  
+http://localhost:5173
+
+---
+
+## 🚀 Deployment
+
+You can deploy this project on:
+
+- Vercel  
+- Netlify  
+- GitHub Pages  
+
+To build the project:  
+npm run build
+
+---
+
+## 🧠 Engineering Highlights
+
+- TypeScript for type safety  
+- Modular and scalable architecture  
+- Fast build system using Vite  
+- Clean UI with utility-first CSS  
+- Designed for easy backend/API integration  
+
+---
+
+## 🔮 Future Improvements
+
+- API integration for real-time deals  
+- User authentication system  
+- Save/bookmark deals feature  
+- Notifications for new deals  
+- AI-based deal recommendations  
+
+---
+
+## 👤 Author
+
+Akarsh Sharma  
+
+GitHub: https://github.com/Akarsh242005  
+LinkedIn: https://www.linkedin.com/in/akarsh-sharma-867690297  
+LeetCode: https://leetcode.com/u/AkarshSharma/  
+Email: akarsh12342005@gmail.com  
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
